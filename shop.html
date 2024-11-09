@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Gallery</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <header>
+        <div class="h">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>        
+        </div>
+    </header>
+    <h2 style="text-indent: 40px;">Shop the products here.....</h2>
+
+    <section class="gallery">
+        <div class="gallery-container">
+            
+            <div class="gallery-item">
+                <img src="c1.jpg" alt="Product 1">
+                <div class="info">
+                    <p>Price: 3950.00 | Time: 3 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="c2.jpg" alt="Product 2">
+                <div class="info">
+                    <p>Price: 2500.00 | Time: 2 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>   
+            <div class="gallery-item">
+                <img src="c3.jpg" alt="Product 3">
+                <div class="info">
+                    <p>Price: 1800.00 | Time: 2 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="b1.png" alt="Product 4">
+                <div class="info">
+                    <p>Price: 1450.00 | Time: 1 week</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ceramic1.jpg" alt="Product 5">
+                <div class="info">
+                    <p>Price: 2300.00 | Time: 2 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="ceramic2.jpg" alt="Product 6">
+                <div class="info">
+                    <p>Price: 3200.00 | Time: 3 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ceramic3.jpg" alt="Product 7">
+                <div class="info">
+                    <p>Price: 2600.00 | Time: 2 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ceramic6.jpg" alt="Product 8">
+                <div class="info">
+                    <p>Price: 3700.00 | Time: 3 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ceramic5.jpg" alt="Product 9">
+                <div class="info">
+                    <p>Price: 2990.00 | Time: 3 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ceramic4.jpeg" alt="Product 10">
+                <div class="info">
+                    <p>Price: 3100.00 | Time: 3 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="wood1.jpg" alt="Product 11">
+                <div class="info">
+                    <p>Price: 2800.00 | Time: 3 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="wood2.webp" alt="Product 12">
+                <div class="info">
+                    <p>Price: 2250.00 | Time: 2 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="wood3.webp" alt="Product 13">
+                <div class="info">
+                    <p>Price: 3100.00 | Time: 3 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="wood4.png" alt="Product 14">
+                <div class="info">
+                    <p>Price: 3450.00 | Time: 4 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="wood5.jpeg" alt="Product 15">
+                <div class="info">
+                    <p>Price: 2900.00 | Time: 2 weeks</p>
+                    <button class="shop-btn">Shop</button>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+    document.querySelectorAll('.shop-btn').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const galleryItem = button.closest('.gallery-item');
+            const item = {
+                name: galleryItem.querySelector('img').alt,
+                price: galleryItem.querySelector('.info p').textContent.split('|')[0].split(':')[1].trim(),
+                time: galleryItem.querySelector('.info p').textContent.split('|')[1].split(':')[1].trim(),
+                image: galleryItem.querySelector('img').src // Store the image source
+            };
+            // Load the existing cart items from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(item); // Add the new item to the cart
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save the updated cart
+            alert('Item added to cart!');
+        });
+    });
+</script>
+
+</body>
+</html>

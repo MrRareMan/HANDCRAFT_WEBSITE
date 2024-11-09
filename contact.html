@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Handcrafted Treasures</title>
+    <link rel="stylesheet" href="cnstyles.css"> 
+  
+</head>
+<body>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "Fv4UIpsLpLgGwG6DX",
+      });
+   })();
+</script>
+
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Handcrafted <span>Treasures</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="profileinfo.html">Profile Info</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <p>If you have any questions or comments, please feel free to reach out to us using the form below.</p>
+
+        <form class="contact-form" id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="fullname" placeholder="FULL NAME" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email_id" placeholder="EMAIL" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button onclick="SendMail()">Send</button>
+        </form>
+
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: <a href="venkateshpallekona627@gmail.com">venkateshpallekona627@gmail.com</a></p>
+            <p>Phone: <a href="tel:+9867542376">+1 (234) 567-890</a></p>
+            <p>Follow us on social media:</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/venkatesh.pallekona?mibextid=ZbWKwL"><img src="fb.jpg" alt="Facebook"></a>
+                <a href="https://x.com/admire_venkat?t=AQQbkumkHNWeBYoNb88tUw&s=09"><img src="twitter.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/mr_rare_man_?igsh=MXJ1bzA1dWVmdTF6Ng=="><img src="insta.jpg" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 Handcrafted Treasures. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+<script src="script.js"></script>
+</html>
+
+
